@@ -18,31 +18,11 @@ Now for each project can be easly access to seolve problems & maintanance projec
 + Terminal scripts are starting over [shelljs](https://github.com/shelljs/shelljs) library
 + Scripts are created by [apicra](https://github.com/apicra) project, which is supporting any os
 
+### Another our Projects 
+[WebBrowser client for terminal console](https://github.com/DevOpsTerminal/frontend)
 
-## Benefits
-Thanks this, you can faster do something without spending time for writing
-Special solution for mobile devices!
+## How to start
 
-Be faster!
-... more touching, less writing
-
-### Devops-Gui
-the first version of apicra tool, just for testing web interface and terminal console
-This project is using apicra-devops scripts to execute in console on many platform: Windows, Linux, iOS
-
-https://github.com/apicra/devops
-
-### DevOpsTerminal
-This tool will be used instead of apicra tool, with:
-+ extended functionality for shell, bash scripting
-+ more options for project management
-+ the same platform, nodejs
-+ better UI, optimisied for automatisation
-
-### WebBrowser client for terminal console 
-https://github.com/DevOpsTerminal/frontend
-
-## How it works
 NodeJS Installation
 
 https://nodejs.org/en/
