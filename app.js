@@ -7,6 +7,7 @@ var logger = require('morgan');
 //var FileList = [];
 var indexRouter = require('./routes/index');
 var batRouter = require('./routes/bat');
+// var batqRouter = require('./routes/batq');
 var projectRouter = require('./routes/project');
 
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/bat', batRouter);
+// app.use('/batq', batqRouter);
 app.use('/project/', projectRouter);
 
 // catch 404 and forward to error handler

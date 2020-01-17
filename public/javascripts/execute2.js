@@ -2,6 +2,65 @@ function ie8SafePreventEvent(e) {
     e.preventDefault() || (e.returnValue = false) || e.stopPropagation();
 }
 
+//
+// $("a.popup").on("click", function (e) {
+//     ie8SafePreventEvent(e);
+//     popup(this);
+// });
+var title = "...";
+
+function popup(that) {
+    console.log("that", that);
+    // $(that).attr("href", qurl + Query);
+    // return alert('Sie haben Zutritt');
+    var title_base = $(that).text();
+    var qurl_base = $(that).attr("href");
+    var text = $(that).text();
+    // alert(text);
+
+    if (text !== title) {
+        // return text;
+        return true;
+    }
+
+
+    // alert('Du kommst hier nicht rein!');
+    var Query = prompt('Parameter for script', '');
+    if (Query != '') {
+        // alert('Du kommst hier nicht rein!');
+        var qurl = qurl_base + Query;
+        $(that).attr("href", qurl);
+        $(that).text(Query);
+        $(that).data("query",Query);
+
+        var qurl1 = $(that).attr("href");
+        console.log(qurl1);
+
+        var batq = {
+            Query: '',
+            name: title_base,
+            url: qurl_base,
+            title: title
+        };
+
+        $(that).parents(".inline").append(
+            getPromptButton(batq)
+        );
+
+        // window.location = qurl1;
+        // $(that).click();
+        // alert(qurl1);
+    } else {
+        alert('Not Correct Value');
+    }
+}
+
+function getPromptButton(batq) {
+    return "<button>"
+        + "<a class='prompt' onclick='popup(this)' href='" + batq.url + "'  data-name='" + batq.name + "' data-query='" + batq.Query + "' >" + batq.title + "</a>"
+        + "</button>";
+}
+
 $(document).ready(function () {
     //your code here
     // $('.projects').load('projects');
@@ -31,12 +90,14 @@ $(document).ready(function () {
             var namen_arr = "";
             var namen_str = "";
 
-            $(".scripts").html("");
+            //$(".scripts").html("");
 
             // $.each(data, function (key, val) {
             //     var group_name = val.name.split('_', 2);
             //     items.push();
             // });
+
+            var batq = {};
 
             $.each(data, function (key, val) {
 
@@ -56,9 +117,17 @@ $(document).ready(function () {
                 // console.log(namen_arr);
                 console.log(namen_str);
 
-                item = "<li id='menu_" + key + "'>"
+                batq = {
+                    Query: '',
+                    name: val.name,
+                    url: val.url + '/q/' + '',
+                    title: title
+                };
+
+                item = "<li class='inline' id='menu_" + key + "'>"
                     // + val.path_dir
-                    + "<a href='" + val.url + "' data-name='" + val.name + "'>" + namen_str + "</a>"
+                    + "<a href='" + val.url + "' data-name='" + val.name + "' data-query='" + batq.Query + "'>" + namen_str + "</a>"
+                    + getPromptButton(batq)
                     + "</li>";
 
                 console.log(item);
@@ -101,7 +170,7 @@ $(document).ready(function () {
                     var path = $(this).text();
                     var name = path.replace(/^.*[\\\/]/, '');
 
-                    $(".logs ul").append("<li>" + $(this).data("name") + "</li>");
+                    $(".logs ul").append("<li>" + $(this).data("name") + " " + $(this).data("query") + "</li>");
 
 
                     // $('.message').load(url);
