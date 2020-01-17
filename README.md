@@ -1,6 +1,13 @@
 # Promagen
 PROject MAnager & GENerator
 
++ [promagen.com](https://promagen.com)
+
++ [docs](https://promagen.github.io/docs/)
+
++ [sourcecode](https://github.com/promagen/devops-gui)
+
+
 ## How it work's?
 Web service on browser is using console for executing bash scripts on server/pc/iot device
 
