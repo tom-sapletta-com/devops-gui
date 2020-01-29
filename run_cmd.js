@@ -62,7 +62,11 @@ function RunCmd(filename, res) {
 
         exec(command, function (code, stdout, stderr) {
             console.log('Exit code:', code);
+
+            // For admins role : 3001
             console.log('Program output:', stdout);
+
+            // User Role, show the Errors :3002
             console.log('Program stderr:', stderr);
 
             code = '<span style="color: gray">' + code + '</span>' + '<br/>';
