@@ -1,17 +1,34 @@
 ## TODO
 
 2020
+  
     + options for simple share the shell scripts
         + without ini files, only execute inside path, the same folder for scripts
-        + with passwd for many users        
+        + with passwd for many users               
+  
     + there is no roles, becuase some, restricktions is possible to make with different project / path
         + folder/ports
             + 3001 Admin (prompt)
             + 3002 DevOps (all scripts without prompt)
             + 3003 Support (some scripts to help bugfixing and backup)
             + 3004 Users (only access to functions: restart / backup / restore)
-            
-
+  
+    + Queue for commands
+        + use icon for make a quee, with waiting for the last executed command
+  
+    + action table
+        + script name
+        + execute now
+            + with param
+            + with last used param
+        + edit file
+        + remove / create file
+        + logs of this file
+            + text in console
+            + time of execution
+            + user 
+    + logs windows
+    
 2019
  + create settings local file, and by user
  + Split gui to differents technologies/languages/scripts:
