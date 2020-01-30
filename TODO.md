@@ -29,6 +29,9 @@
             + user 
     + logs windows
     
+    + execute different files, too .exe, .py
+    + Question on forum: https://forum.pasja-informatyki.pl/469386/node-js-python
+    
 2019
  + create settings local file, and by user
  + Split gui to differents technologies/languages/scripts:
