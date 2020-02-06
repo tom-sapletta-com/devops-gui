@@ -66,5 +66,12 @@ Start APP
     xampp path
     
     
+## Dokumentacja PL
+
+ProMaGen to rozwiazanie dla Administratorow, gdzie
+zamiast uzywac skryptow z konsoli, mozna w przegladarce, 
+to WebUI dla terminala, ktore uruchamiaa skrypty w konsoli z poziomu przegladarki.
+Przydaje sie gdy trzeba codziennie w srodowisku testowym wykonywac powtarzalne rzeczy, typu restore bazy danych, zmiana hasel, itp
+
     
     
