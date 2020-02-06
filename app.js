@@ -1,19 +1,21 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const auth = require('./src/auth');
 
 //var FileList = [];
-var indexRouter = require('./routes/index');
-var batRouter = require('./routes/bat');
+const indexRouter = require('./routes/index');
+const batRouter = require('./routes/bat');
 // var batqRouter = require('./routes/batq');
-var projectRouter = require('./routes/project');
+const projectRouter = require('./routes/project');
 
-
-var app = express();
+const app = express();
 
 // TODO: load athentication data for API,
+app.use(auth);
+
 // TODO: people accounts skype, email, etc
 // TODO: Load environment.js and load Path, and specific
 // TODO: load project.js file and load to the projectLIst
@@ -32,6 +34,9 @@ app.use('/', indexRouter);
 app.use('/bat', batRouter);
 // app.use('/batq', batqRouter);
 app.use('/project/', projectRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

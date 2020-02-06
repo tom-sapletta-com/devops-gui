@@ -1,18 +1,17 @@
 const express = require('express');
 var router = express.Router();
-var projectList = require('../project_list');
-var RunCmdPar = require('../run_cmd');
+var projectList = require('../src/project_list');
+var RunCmdPar = require('../src/run_cmd');
 const PublicConfig = require('../config');
 var localConfig = new PublicConfig();
 
 console.log('localConfig.os');
 console.log(localConfig.os);
 
-var getFileList = require('../get_bat_file_list');
+var getFileList = require('../src/get_bat_file_list');
 if (localConfig.os === 'Linux') {
-    getFileList = require('../get_sh_file_list');
+    getFileList = require('../src/get_sh_file_list');
 }
-
 
 /* get list of executable files from project folder */
 router.get('/p/:project_type/:project_id/:file_id', function (req, res, next) {
@@ -51,12 +50,13 @@ router.get('/p/:project_type/:project_id/:file_id', function (req, res, next) {
         FileList.forEach(function (filename, index) {
 
             // TODO: create filelogs
-            console.log('filename');
+            console.log('filename:');
             console.log(filename);
-
+            console.log('fileId:');
             console.log(fileId);
+            console.log('index:');
             console.log(index);
-            console.log(index == fileId);
+            // console.log(index == fileId);
 
             if (index == fileId) {
                 RunCmdPar(filename, res);

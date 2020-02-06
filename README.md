@@ -74,4 +74,8 @@ to WebUI dla terminala, ktore uruchamiaa skrypty w konsoli z poziomu przegladark
 Przydaje sie gdy trzeba codziennie w srodowisku testowym wykonywac powtarzalne rzeczy, typu restore bazy danych, zmiana hasel, itp
 
     
+## Basic Login
+https://www.taniarascia.com/basic-authentication-for-an-express-node-app-htpasswd/
+
+    npm install basic-auth
     

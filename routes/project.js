@@ -8,12 +8,12 @@ var path = require("path");
 console.log('localConfig.os');
 console.log(localConfig.os);
 
-var getFileList = require('../get_bat_file_list');
+var getFileList = require('../src/get_bat_file_list');
 if(localConfig.os === 'Linux'){
-    getFileList = require('../get_sh_file_list');
+    getFileList = require('../src/get_sh_file_list');
 }
 
-var projectList = require('../project_list');
+var projectList = require('../src/project_list');
 
 console.log('projectList');
 console.log(projectList);
