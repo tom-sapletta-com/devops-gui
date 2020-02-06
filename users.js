@@ -1,6 +1,11 @@
 module.exports = {
     tom: {
         password: 'password',
-        role: 'admin'
+        role: [
+            'admin',
+            'dev',
+            'manager',
+            'owner'
+        ]
     }
 };
