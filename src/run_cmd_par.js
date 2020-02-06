@@ -14,8 +14,6 @@ function RunCmdPar(filename, query, res) {
     //path.basename('/foo/bar/baz/asdf/quux.html')
     var dir = path.dirname(filename);
 
-    var version = exec('node --version', {silent: true}).stdout;
-
     if (!which('docker')) {
         info = 'Sorry, this script requires DOCKER';
         console.log(info);

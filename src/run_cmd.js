@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 require('shelljs/global');
 
 // http://adilapapaya.com/docs/shelljs/
@@ -13,8 +13,6 @@ function RunCmd(filename, res) {
 
     //path.basename('/foo/bar/baz/asdf/quux.html')
     var dir = path.dirname(filename);
-
-    var version = exec('node --version', {silent: true}).stdout;
 
     if (!which('docker')) {
         info = 'Sorry, this script requires DOCKER';
